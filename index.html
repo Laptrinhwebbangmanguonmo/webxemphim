@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>SLIDE</title>
+<meta name="description" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<style>
+body {
+	padding-top:0px;
+}
+h1 {color:#F90}
+p {color:#0C0}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2 class="text-center">SLIDE</h2>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+   
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    
+    <div class="carousel-inner">
+      <div class="item active"> <img src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/19224995_1172382312906691_8161622641462373066_n.jpg?oh=e67e6680cc006ef2e8889a3f55f767ba&oe=5A0AE7C5">
+        <div class="carousel-caption">
+          <h1>Tiêu đề phim</h1>
+        </div>
+      </div>
+    
+      <div class="item"> <img src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/18952644_1166448086833447_7769732991108754746_n.jpg?oh=94023538c70d3357f53631226e08f5c4&oe=59CD03EF">
+        <div class="carousel-caption">
+          <h1>Tiêu đề phim</h1>
+         
+        </div>
+      </div>
+     
+      <div class="item"> <img src="https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/17883572_1122749614536628_2318428755374817579_n.jpg?oh=53a417b092d3d22b3bcf7254dc818d38&oe=59CF5453">
+        <div class="carousel-caption">
+          <h1>Tiêu đề phim</h1>
+        </div>
+      </div>
+    
+    </div>
+  
+ 
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+ 
+</div>
+<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+	$('#myCarousel').carousel({
+		interval:   4000
+	});
+</script>
+</body>
+</html>
