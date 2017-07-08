@@ -1,4 +1,5 @@
 <?php
+require("../sql/connect.php");
 if(isset($_GET['id']))
 {
 $id=$_GET['id'];
@@ -92,13 +93,15 @@ if(isset($_POST['luu']))
 	}
 	if(empty($errors))
 	{
-	require("../sql/connect.php");
+
 	$del="UPDATE PHIM.USER SET LASTNAME='$lastname',FIRSTNAME='$fisrtname',EMAIL='$email',PASSWORD='$password',NGAYSINH='$ngaysinh',HINH='$anhdaidien',GIOITINH='$gioitinh',LEVEL='$qtc'where ID='$id'";
-	$stmt2 = db2_prepare($conn, $del);
-	$result2 = db2_execute($stmt2); 
+	$stmt = db2_prepare($conn, $del);
+	$result = db2_execute($stmt);
+	if($result) 
+	{
 	move_uploaded_file($_FILES['anhdaidien']['tmp_name'],"upload/$anhdaidien");
 	$success[]="suathanhcong";
-	db2_close($conn);
+	}
 	}
 }
 
@@ -123,7 +126,6 @@ if(isset($_POST['luu']))
 </div>
 <section class="content form-horizontal">
 	<?php
-		require("../sql/connect.php");
 		$sql = "SELECT * FROM PHIM.USER WHERE ID='$id'";
         $stmt = db2_prepare($conn, $sql);
         $result = db2_execute($stmt);

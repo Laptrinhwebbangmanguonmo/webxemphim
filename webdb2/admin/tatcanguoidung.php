@@ -1,5 +1,11 @@
 <?php
-if(isset($_GET["lv"]))
+if(!isset($_GET["lv"]))
+{
+?>
+    <div class="row" style="height: 200px"></div>
+    <div class="text-red text-center"><h1>Bạn không đủ quyền truy cập trang này!Vui lòng quay lại :<a href="index.php">Trang chủ...</a></h1></div>
+<?php
+}else
 {
     $lv=$_GET["lv"];
 }
@@ -187,8 +193,8 @@ $sql = "SELECT * FROM PHIM.USER";
                 <th><img width="100" src="upload/<?php echo $row[6]; ?>"/></th>
                 <th><?php echo $row[7]; ?></th>
                 <th><?php echo $row[8]; ?></th>
-                <th><a class="btn btn-primary" href="index.php?page=suauser&id=<?php echo $row[0]; ?>">Sữa</a></th>
-                <th><a class="btn btn-danger" href="xoauser.php?id=<?php echo $row[0]; ?>">Xóa</a></th>
+                <th><a class="btn btn-primary fa fa-pencil-square-o" href="index.php?page=suauser&id=<?php echo $row[0]; ?>"> Sữa</a></th>
+                <th><a class="btn btn-danger  fa fa-trash-o" href="xoauser.php?id=<?php echo $row[0]; ?>&lv=<?php echo $lv; ?>"> Xóa</a></th>
             </tr>
             <?php }}?>
         </tbody>

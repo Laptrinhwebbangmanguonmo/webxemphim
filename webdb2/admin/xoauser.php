@@ -2,6 +2,7 @@
 	ob_start();
 	session_start();
 	$id=$_GET['id'];
+	$lv=$_GET['lv'];
 	require("../sql/connect.php");
 	$del="delete from PHIM.USER where ID='$id'";
 	$stmt2 = db2_prepare($conn, $del);
@@ -9,11 +10,11 @@
 	if(isset($result2))
 	{
 	db2_close($conn);
-	header('location: index.php?page=tatcanguoidung&success=xoathanhcong');
+	header("location: index.php?page=tatcanguoidung&success=xoathanhcong&lv=$lv");
 	}
 	else
 	{
-		header('location: index.php?page=tatcanguoidung&errors=xoathatbai');
+		header('location: index.php?page=tatcanguoidung&errors=xoathatbai&lv=<?php echo $lv;?>');
 	}
 
 ?>

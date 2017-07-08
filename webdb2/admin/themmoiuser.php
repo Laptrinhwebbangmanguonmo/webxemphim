@@ -259,8 +259,8 @@ if(isset($_POST['luu']))
 	    <label for="gioitinh" class="col-sm-2 control-label">Giới Tính:</label>
 	    <div class="col-sm-10">
 	    	<div class="form-control">
-		      	<input type="radio" name="gioitinh" value="Nam" >Nam
-		      	<input type="radio" name="gioitinh" value="Nữ">Nữ
+		      	<label><input type="radio" name="gioitinh" value="Nam">Nam</label>
+		      	<label><input type="radio" name="gioitinh" value="Nữ">Nữ</label>
 	      	</div>
 	    	<div class="btn-danger errors" style="font-size: 16px;box-shadow: 1px 1px 4px 1px #2d2b2b;">
 		       	<?php 

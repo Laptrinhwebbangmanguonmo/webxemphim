@@ -3,13 +3,14 @@ ob_start();
 session_start();
 if(isset($_SESSION["email"]) && isset($_SESSION["pass"]))
 {
+$email=$_SESSION["email"];
 $errors=array();
 $success=array();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <style type="text/css">
+  <!-- <style type="text/css">
     .files input {
     outline: 2px dashed #92b0b3;
     outline-offset: -10px;
@@ -55,13 +56,14 @@ $success=array();
     text-transform: capitalize;
     text-align: center;
 }
-  </style>
+  </style> -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/index.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -307,43 +309,45 @@ $success=array();
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
+          <?php 
+              require("../sql/connect.php");
+              $sql = "SELECT * FROM PHIM.USER";
+              $stmt = db2_prepare($conn, $sql);
+              $result = db2_execute($stmt);
+              if(isset($result))
+              {
+              while ($row = db2_fetch_array($stmt)) {
+              if($row[3]=="$email")
+              {
+          ?>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="upload/<?php echo $row[6]; ?>" class="user-image" alt="User Image"/>
+              <span class="hidden-xs"><?php echo $row[1]." ".$row[2]; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="upload/<?php echo $row[6]; ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <?php echo $row[1]." ".$row[2];?> - <?php if($row[8]==1){echo "Admin";}else{echo "Biên tập Viên";}?>
+                  <small>Giới Tính :<?php echo $row[7];?></small>
+                  <small>Ngày Sinh :<?php echo $row[5];?></small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                <div class="row text-center">
+                  <?php echo $row[3];?>
                 </div>
                 <!-- /.row -->
               </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="signout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -363,13 +367,14 @@ $success=array();
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="upload/<?php echo $row[6]; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $row[1]." ".$row[2]; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
+      <?php } }}?>
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
@@ -382,187 +387,9 @@ $success=array();
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
-        <li class="header">Menu</li>
-        <li class="active treeview">
-          <a href="index.php">
-            <i class="fa fa-dashboard"></i> <span>Bảng Tin</span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Thành Viên</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?page=tatcanguoidung&lv=<?php echo $_SESSION['level'];?>"><i class="fa fa-users"></i>
-Tất cả người dùng</a></li>
-            <li><a href="index.php?page=themmoiuser&lv=<?php echo $_SESSION['level'];?>"><i class="fa fa-user-plus"></i>Thêm mới</a></li>
-            <li><a href="signout.php"><i class="fa fa-sign-out"></i>Đăng xuất</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-diamond"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-diamond"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-diamond"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-diamond"></i> Collapsed Sidebar</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-diamond"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-diamond"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-diamond"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-diamond"></i> Inline charts</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-diamond"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-diamond"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-diamond"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-diamond"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-diamond"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-diamond"></i> Modals</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-diamond"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-diamond"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-diamond"></i> Editors</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/tables/simple.html"><i class="fa fa-diamond"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-diamond"></i> Data tables</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-folder"></i> <span>Examples</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-diamond"></i> Invoice</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-diamond"></i> Profile</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-diamond"></i> Login</a></li>
-            <li><a href="pages/examples/register.html"><i class="fa fa-diamond"></i> Register</a></li>
-            <li><a href="pages/examples/lockscreen.html"><i class="fa fa-diamond"></i> Lockscreen</a></li>
-            <li><a href="pages/examples/404.html"><i class="fa fa-diamond"></i> 404 Error</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-diamond"></i> 500 Error</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-diamond"></i> Blank Page</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-diamond"></i> Pace Page</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-diamond"></i> Level One</a></li>
-            <li>
-              <a href="#"><i class="fa fa-diamond"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-diamond"></i> Level Two</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-diamond"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-diamond"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-diamond"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-diamond"></i> Level One</a></li>
-          </ul>
-        </li>
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-diamond text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-diamond text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-diamond text-aqua"></i> <span>Information</span></a></li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
+      <?php include('lertmenu.php');?>
+      </section>
+      <!-- /.sidebar -->
   </aside>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -576,6 +403,7 @@ Tất cả người dùng</a></li>
      {
       $val_page=$_GET['page'];
       switch ($val_page) {
+        // user
         case 'tatcanguoidung':
           include 'tatcanguoidung.php';
           break;
@@ -584,6 +412,39 @@ Tất cả người dùng</a></li>
           break;
         case 'suauser':
           include 'suauser.php';
+          break;
+        //Thể loại
+        case 'themdanhmuc':
+          include 'themdanhmuc.php';
+          break;
+        case 'danhsachdanhmuc':
+          include 'danhsachdanhmuc.php';
+          break;
+        case 'suadanhmuc':
+          include 'suadanhmuc.php';
+          break;
+        //slide
+        case 'themslide':
+          include 'themslide.php';
+          break;
+        case 'danhsachslide':
+          include 'danhsachslide.php';
+          break;
+        case 'suaslide':
+          include 'suaslide.php';
+          break;
+        //Phim
+        case 'themphim':
+          include 'themphim.php';
+          break;
+        case 'danhsachphim':
+          include 'danhsachphim.php';
+          break;
+        case 'suaphim':
+          include 'suaphim.php';
+          break;
+        case 'quangcao':
+          include 'quangcao.php';
           break;
       }
      }
@@ -838,7 +699,7 @@ Tất cả người dùng</a></li>
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
+<script type="text/javascript" language="javascript" src="ckeditor/ckeditor.js" ></script>
 </body>
 </html>
 <?php
