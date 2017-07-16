@@ -1,3 +1,4 @@
+<!-- Hiển Thị Slide  -->
 <?php
   require("sql/connect.php");
   $dem=0;
