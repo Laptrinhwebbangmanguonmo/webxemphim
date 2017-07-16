@@ -13,3 +13,16 @@
 <p>CREATE TABLE PHIM.SLIDE(ID SMALLINT PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1),TEN VARGRAPHIC(255) NOT NULL,HINH VARGRAPHIC(255) NOT NULL,NOIDUNG VARGRAPHIC(2000) NOT NULL,LINK VARGRAPHIC(255) NOT NULL,HIENTHI INTERGER NULL)</p>
 <h5>Bảng Quảng Cáo</h5>
 <p>CREATE TABLE PHIM.QUANGCAO(ID SMALLINT PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1),lINKLERTABS VARGRAPHIC(255) NOT NULL,IMGLERTABS VARGRAPHIC(255) NOT NULL,lINKRIGHTABS VARGRAPHIC(255) NOT NULL,IMGRIGHTABS VARGRAPHIC(255) NOT NULL,HIENTHI VARGRAPHIC(50))</p>
+<h3>II.Bố Cục Source Code</h3>
+<h5>Bố Cục Gồm 3 Phần Chính</h5>
+<p>*Thư Mục chứa code Giao Diên Admin Và Thư viện<br>*Thư Mục Chứa Kết Nối Và Tạo Bảng Trong CSDL DB2 <br>*Phân còn lại chứa Code PHP giao diện người dùng</p>
+<img src="HinhRM/giaodien.png" width="50%">
+<h6>1.Thư Mục Chứa Các Thư Viện Và Các File PHP giao diên Admin</h6>
+<img src="HinhRM/Admin.png" width="50%;">
+<div><p>Bên Trong Thư Mục Admin Gôm Có </p></div>
+<p>a. Các file Thư Viên Và tệp Đính kèm Được xây dựng sẵn Bởi Template Boostrap</p>
+<img src="HinhRM/Cadmin.png" width="50%;">
+<p>b.Các file PHP giao diên Admin Được Nhóm Phát triển Phần mềm Viết Ra</p>
+<img src="HinhRM/Cadmin2.png" width="50%;">
+<h6>2.Thư Mục Chứa Kết Nối Và Tạo Bảng Trang CSDL</h6>
+<img src="HinhRM/sql.png" width="50%">
