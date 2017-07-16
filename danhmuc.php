@@ -1,3 +1,4 @@
+<!-- Trang Chi Tiết -->
 <?php
 // function curl
 function curl($url)
