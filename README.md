@@ -1,5 +1,21 @@
+<p><img src="HinhRM/header.png" width="100%;"></p>
 <h1 style="text-align: center;">Xây Dựng WebSite Xem Phim</h1>
 <hr>
+<h2>Lời nói đầu</h2>
+<p style="text-align: left;">Internet là tài nguyên vô tận với con người trong mọi lĩnh vực.Internet là mạng máy tính khổng lồ được kết nối lại với nhau. Bất cứ vị trí , khoảng cách hoặc thời gian nào, một máy tính kết nối vào mạng Internet đều được coi là thành viên của mạng Internet<br>Nhầm hướng tới nhu cầu xem phim của mọi người . Xem phim nhanh hơn .Chúng Tôi Hướng tới Xây dựng 1 website xem phim.<br>Để đáp ứng với nhu cầu càng lớn của cua người, giúp mọi người có thể thưởng thức những bộ phim hay.<br>Đáp ứng nhu cầu thư giãn giải trí của con người sau giờ làm việc mệt mỏi.<br>Bắt kịp xu thế phát triển của ngành công nghiệp sản xuất phim trên thế giới.</p>
+<h2>Nhóm Thực Hiện</h2>
+<ol>
+<li>Nguyễn Trọng Lâm</li>
+<li>Nguyễn Trung Hiếu</li>
+<li>Nguyễn Hồng Phú</li>
+<li>Huỳnh Huy Hùng </li>
+<li>Trần Minh Hoàng</li>
+</ol>
+<p>Page:<a href="https://www.facebook.com/yeuphimle.net/">Facebook.com/yeuphimle.net</a></p>
+<h2>Mục tiêu của đề tài</h2>
+<p>Cung cấp kho phim hay và độc đáo cho người xem qua những bộ phim mới.
+<br>	Cung cấp đến người xem những thể loại phim bổ ích.
+<br>	Phát triển website với quy mô lơn hơn để đáp ứng với nhu cầu thực tế hiện nay.</p>
 <h2>I. Tạo CSDL</h2>
 <img src="HinhRM/CSDL.png" width="50%">
 <h3>Trong Đó: (Mình Tạo Bằng Dòng lệnh)</h3>
@@ -67,3 +83,8 @@
 <img src="HinhRM/xoasuap.png" width="50%;">
 <h4>3. Chức Năng Cập Nhật Quảng Cáo</h4>
 <img src="HinhRM/update.png" width="50%;">
+<h2>V. Mục Tiêu Phát triển Trong Tương Lai</h2>
+<li>Tối Ưu Hóa Source Code </li>
+<li>Nâng Cấp Kho Dữ Liệu Phim </li>
+<li>Cập Nhật Một số Tính Năng mới Đáp ứng nhu cầu người dùng và thời đại</li>
+<li>Xử Lý Những Khuyết điểm trong Version 1.0 này!!! Hứa Hẹn Vào 1 Website bùng nổ Trong Tương Lai! </li>
