@@ -1,3 +1,4 @@
+<!-- Trang Tìm Kiếm Theo Tên Phim -->
 <?php
  require("sql/connect.php");
 if(isset($_GET['tim']))
