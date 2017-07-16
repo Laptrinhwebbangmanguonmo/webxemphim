@@ -1,3 +1,4 @@
+<!-- Trang Thêm mới Slide -->
 <?php
 require("../sql/connect.php");
 
