@@ -1,3 +1,4 @@
+<!-- Trang Danh sách Phim -->
 <?php
 require("../sql/connect.php");
 if(isset($_SESSION["email"]))
