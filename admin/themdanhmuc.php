@@ -1,3 +1,4 @@
+<!-- Trang Thêm Mới Danh Mục -->
 <?php
 if(isset($_GET["lv"]))
 {
