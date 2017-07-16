@@ -1,3 +1,4 @@
+<!-- Trang Xóa Danh Mục -->
 <?php
 	ob_start();
 	session_start();
