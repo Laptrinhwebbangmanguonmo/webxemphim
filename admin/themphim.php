@@ -1,3 +1,4 @@
+<!-- Trang Thêm mới Phim -->
 <?php
 require("../sql/connect.php");
 if(isset($_POST['themphim']))
