@@ -1,3 +1,4 @@
+<!-- Trang Danh sách Slide  -->
 <?php
 if(isset($_GET["lv"]))
 {
