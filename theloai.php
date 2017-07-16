@@ -1,3 +1,4 @@
+<!-- hiển Thị Menu Giao dien người dung -->
 <?php
 if(isset($_GET['page']))
 {
