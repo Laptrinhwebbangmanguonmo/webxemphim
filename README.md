@@ -1,1 +1,4 @@
-<h1>ĐỀ TÀI:</h1><h2>Xây Dựng WebSite Xem Phim</h2>
+<h1>Xây Dựng WebSite Xem Phim</h1>
+<hr>
+I. Tạo CSDL
+<img src="HinhRM/CSDL">
