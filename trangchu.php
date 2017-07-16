@@ -1,7 +1,8 @@
+<!-- Trang CHủ Giao dien Người Dùng-->
 <?php
 require("sql/connect.php");
 $sql = "SELECT * FROM PHIM.PHIM ORDER BY ID DESC";
-$stmt = db2_prepare($conn, $sql);
+sTrang CHủ Giao dien Người Dùngtmt = db2_prepare($conn, $sql);
 $result = db2_execute($stmt);
 if($result)
 {
