@@ -1,3 +1,4 @@
+<!-- Trang Tạo Quảng Cáo Cho Web-->
 <?php
 if(isset($_POST['UpdatequangCao']))
 {
