@@ -1,10 +1,11 @@
 ## Tên đề tài 
 
-Đề tài phát triển website phim với mã nguồn wordpress .
+Đề tài phát triển website phim 
 
 ## Installation
 Hướng dẫn cài đặt wp tại đây :
-[Hướng dẫn](https://thachpham.com/wordpress/wordpress-tutorials/cai-dat-hoan-thien-wordpress.html)
+- Cài đặt xampp 
+- Mở file .html và khởi động xampp
 
 ## Lý do chọn đề tài
 
@@ -23,4 +24,4 @@ Nhầm hướng tới nhu cầu xem phim của mọi người . Xem phim nhanh h
 	.Hùng
 #Cá nhân 
   .Nguyễn Trung Hiếu 
-  [Facebook](https://www.facebook.com/vitaminxoxoxo)
+ 
