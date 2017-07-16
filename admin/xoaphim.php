@@ -1,3 +1,4 @@
+<!-- Trang Xóa Phim -->
 <?php
 	ob_start();
 	session_start();
