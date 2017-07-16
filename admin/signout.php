@@ -1,3 +1,4 @@
+<!-- Trang Đăng Xuất -->
 <?php
 ob_start();
 session_start();
