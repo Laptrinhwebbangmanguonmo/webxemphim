@@ -1,3 +1,4 @@
+<!-- Trang Hiển Thị Danh Mục Nhỏ Bên bên Phải Giao Diên NGười dùng -->
 <?php
 require("sql/connect.php");
 	$sql = "SELECT * FROM PHIM.PHIM ORDER BY SOLUOTXEM DESC";
