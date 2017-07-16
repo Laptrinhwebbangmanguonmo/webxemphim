@@ -1,3 +1,4 @@
+<!--  Trang Hiển Thị QUảng Cáo Giao Diên NGười dùng -->
 <?php
 require("sql/connect.php");
 	$sql = "SELECT * FROM PHIM.QUANGCAO";
