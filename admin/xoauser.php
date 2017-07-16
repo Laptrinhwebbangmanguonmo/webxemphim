@@ -1,3 +1,4 @@
+<!-- Trang Xóa User -->
 <?php
 	ob_start();
 	session_start();
