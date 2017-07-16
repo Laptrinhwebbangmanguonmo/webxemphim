@@ -1,3 +1,4 @@
+<!-- Kiểm Tra đăng Nhập -->
 <?php
 ob_start();
 session_start();
