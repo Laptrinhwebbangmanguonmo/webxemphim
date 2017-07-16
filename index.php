@@ -1,3 +1,4 @@
+<!--  Trang Chủ Giao Diên NGười dùng  -->
 <?php
 require("sql/connect.php");
 ?>
