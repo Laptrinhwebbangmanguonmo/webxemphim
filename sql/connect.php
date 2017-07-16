@@ -1,3 +1,4 @@
+<!-- File Kết Nối Đến CSDL DB2 -->
 <?php
 $database="PHIM";
 $user="LAM";
