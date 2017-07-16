@@ -1,3 +1,4 @@
+<!-- Trang Xóa Slide -->
 <?php
 	ob_start();
 	session_start();
