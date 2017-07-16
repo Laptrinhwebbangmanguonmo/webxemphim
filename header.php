@@ -1,3 +1,4 @@
+ Trang Header Giao Diên NGười dùng 
 <?php
 $sql1 = "SELECT * FROM PHIM.DANHMUC";
   $stmt1 = db2_prepare($conn, $sql1);
