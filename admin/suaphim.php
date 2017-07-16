@@ -1,3 +1,4 @@
+<!-- Trang Sữa Phim -->
 <?php
 require("../sql/connect.php");
 if(isset($_GET['id']))
