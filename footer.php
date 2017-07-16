@@ -1,3 +1,4 @@
+<!-- Trang Footer Chân Giao Diên NGười dùng -->
 <?php
 require("sql/connect.php");
 	$sql = "SELECT * FROM PHIM.DANHMUC";
