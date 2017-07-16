@@ -1,3 +1,4 @@
+<h1 style="text-align: center;">Lập Trình WebSite Xem Phim</h1>
 1.1.	 Giới thiệu về INTERNET
 -	Internet là tài nguyên vô tận với con người trong mọi lĩnh vực.Internet là mạng máy tính khổng lồ được kết nối lại với nhau. Bất cứ vị trí , khoảng cách hoặc thời gian nào, một máy tính kết nối vào mạng Internet đều được coi là thành viên của mạng Internet
 
