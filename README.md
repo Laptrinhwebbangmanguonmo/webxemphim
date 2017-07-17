@@ -1,7 +1,3 @@
-<style type="text/css">
-	h4{
-		color: red;
-	}
 </style>
 <p><img src="HinhRM/header.png" width="100%;"></p>
 <h1 style="text-align: center;">Xây Dựng WebSite Xem Phim</h1>
